@@ -9,7 +9,7 @@ public class HorizontalMovement : MonoBehaviour
     private Animator anim;
 
     //variables
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     private void Start()
     {
