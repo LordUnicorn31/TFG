@@ -7,7 +7,7 @@ public class HorizontalMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator anim;
-
+    [SerializeField]NPCInteract npc;
     //variables
     public bool isFacingRight = true;
 
@@ -19,6 +19,8 @@ public class HorizontalMovement : MonoBehaviour
 
     private void Update()
     {
+        if (npc.isTalking) return;
+
         float movement = GetMovementInput();
         rb.velocity = new Vector2(movement * moveSpeed, rb.velocity.y);
 

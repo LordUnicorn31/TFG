@@ -7,6 +7,8 @@ public class NPCInteract : MonoBehaviour
 {
     private DialogueRunner dialogueRunner;
     private MeshRenderer textRender;
+
+    public bool isTalking;
     // Start is called before the first frame update
     public void Start()
     {
@@ -30,6 +32,7 @@ public class NPCInteract : MonoBehaviour
 
     private void StartConversation()
     {
+        isTalking = true;
         isCurrentConversation= true;
         dialogueRunner.StartDialogue(conversationStartNode);
     }
@@ -40,21 +43,11 @@ public class NPCInteract : MonoBehaviour
         {
             // Stop talking animation
             isCurrentConversation = false;
+            isTalking = false;
         }
     }
 
     private bool interactable = false;
-
-    //public void OnMouseDown()
-    //{
-    //    if(interactable && !dialogueRunner.IsDialogueRunning)
-    //    {
-    //        StartConversation();
-    //    }
-    //}
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
