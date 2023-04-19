@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HorizontalMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
