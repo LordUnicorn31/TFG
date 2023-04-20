@@ -1,22 +1,48 @@
 ﻿title: Start
 ---
 <<declare $name to "">>
-???: Oh...hi <color=red>red!</color>
+???: Oh...hi
 ???: You are finally here
-???: Can you remind me of your name?
+???: I know you have a lot of questions
+???: Please meet me ahead and I will answer them as much as I can
+???: Can you please remind me your name?
 <<set_name SetName>>
+
 
 ===
 
 title: Second
 ---
-???: Of course, <color=blue>{$name}</color>, how could I forget?
-Hey!
-You made it this far, congratulations!
+???: Hey, <color=red>{$name}</color>, I am happy to see you got here
+<color=red>{$name}</color>: Hi...
 
--> Damn son!
--> What da dog doin?
--> Montate en mi motora
+-> Where am I?
+    <<set $choice1 to true>>
+    <<set $choice2 to false>>
+-> Who are you?
+    <<set $choice2 to true>>
+    <<set $choice1 to false>>
 
-Cya!
+<<if $choice1>>
+    ???: Somewhere you have always been but you never knew
+    ???: What you see here is your <color=red>mind</color>
+
+    -> Who are you?
+    <<set $choice1 to false>>
+    <<set $choice2 to true>>
+<<else>>
+    ???: No one
+
+    -> Where am I?
+    <<set $choice1 to true>>
+    <<set $choice2 to false>>
+<<endif>>
+
+<<if $choice2>>
+    ???: No one
+<<else>>
+    ???: Somewhere you have always been but you never knew
+    ???: What you see here is your <color=red>mind</color>
+<<endif>>
+
 ===
