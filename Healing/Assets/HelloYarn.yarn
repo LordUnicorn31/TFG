@@ -1,12 +1,16 @@
 ﻿title: Start
 ---
-???: Oh...hi
+<<declare $name to "">>
+???: Oh...hi <color=red>red!</color>
 ???: You are finally here
+???: Can you remind me of your name?
+<<set_name SetName>>
 
 ===
 
 title: Second
 ---
+???: Of course, <color=blue>{$name}</color>, how could I forget?
 Hey!
 You made it this far, congratulations!
 
