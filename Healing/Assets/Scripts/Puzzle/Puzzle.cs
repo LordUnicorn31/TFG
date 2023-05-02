@@ -5,7 +5,9 @@ using UnityEngine;
 public class Puzzle : MonoBehaviour
 {
     public GameObject[] puzzlePieces;
+
     private int numCorrectPieces = 0;
+    [SerializeField]private AudioClip correctPieceSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,12 @@ public class Puzzle : MonoBehaviour
         numCorrectPieces++;
         if(numCorrectPieces == puzzlePieces.Length)
         {
+            AudioSource.PlayClipAtPoint(correctPieceSound, Camera.main.transform.position);
             Debug.Log("Puzzle Completed");
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(correctPieceSound, Camera.main.transform.position);
         }
     }
 }
