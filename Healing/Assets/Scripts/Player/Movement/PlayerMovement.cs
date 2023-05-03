@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private HorizontalMovement horMovement;
     private Jump jump;
     private Fall fall;
+
+    public Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public void SetCheckPoint(Vector3 newPos)
+    {
+        position = newPos;
+    }
+
+    private void Die()
+    {
+        transform.position = position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Respawn")
+        {
+            Die();
+        }
+    }
+
 }
