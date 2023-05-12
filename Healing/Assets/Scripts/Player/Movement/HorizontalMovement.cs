@@ -22,20 +22,25 @@ public class HorizontalMovement : MonoBehaviour
     {
         if (npc.isTalking) return;
 
+        Movement();
+    }
+
+    public void Movement()
+    {
         float movement = GetMovementInput();
         rb.velocity = new Vector2(movement * moveSpeed, rb.velocity.y);
 
-        if(movement > 0 && !isFacingRight)
+        if (movement > 0 && !isFacingRight)
         {
             Flip();
         }
 
-        else if(movement < 0 && isFacingRight)
+        else if (movement < 0 && isFacingRight)
         {
             Flip();
         }
 
-        if(movement!=0 ) 
+        if (movement != 0)
         {
             anim.SetBool("isRunning", true);
         }
@@ -44,7 +49,6 @@ public class HorizontalMovement : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
     }
-
     public float GetMovementInput()
     {
         return Input.GetAxis("Horizontal");

@@ -19,7 +19,12 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        Jumping();
+    }
+
+    private void Jumping()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             rb.velocity = new Vector2(rb.velocity.x, force);
             anim.SetBool("isJumping", true);

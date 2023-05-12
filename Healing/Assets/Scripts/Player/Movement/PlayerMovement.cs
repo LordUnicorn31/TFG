@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private HorizontalMovement horMovement;
     private Jump jump;
     private Fall fall;
+    [SerializeField] private FadeOut fadeOut;
 
     public Vector3 position;
     // Start is called before the first frame update
@@ -30,7 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Die()
     {
+        //fadeOut.StartFadeOut();
         transform.position = position;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
