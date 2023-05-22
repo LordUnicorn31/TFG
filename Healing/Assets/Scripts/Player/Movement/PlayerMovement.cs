@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     private HorizontalMovement horMovement;
     private Jump jump;
     private Fall fall;
+    [SerializeField] private float lightRadius;
     [SerializeField] private FadeOut fadeOut;
+    [SerializeField]private GameObject light;
 
     public Vector3 position;
     // Start is called before the first frame update
@@ -42,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Enlight()
+    {
+        lightRadius += 0.5f;
+        light.transform.localScale = new Vector3(lightRadius, lightRadius, 0.0f);
     }
 
 }

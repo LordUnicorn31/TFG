@@ -25,6 +25,7 @@ public class CheckPoint : MonoBehaviour
         if (collision.tag == "Player")
         {
             player.SetCheckPoint(checkPointPos);
+            player.Enlight();
         }
     }
 }
