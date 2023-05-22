@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private HorizontalMovement horMovement;
     private Jump jump;
     private Fall fall;
-    [SerializeField] private float lightRadius;
+    [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
 

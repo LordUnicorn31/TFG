@@ -3657,7 +3657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b0ad7f86c1f6c4d9e4c58fbf9a49a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRadius: 0
+  lightRadius: 0.5
   fadeOut: {fileID: 2022019835}
   light: {fileID: 286334599}
   position: {x: 0, y: 0, z: 0}
