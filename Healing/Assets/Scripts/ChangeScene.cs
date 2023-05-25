@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            fadeOut.StartCoroutine(fadeOut.FadeOut());
+            fadeOut.Wrapper();
         }
     }
 }

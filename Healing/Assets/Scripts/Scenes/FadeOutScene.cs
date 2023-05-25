@@ -19,7 +19,11 @@ public class FadeOutScene : MonoBehaviour
         
     }
 
-    public IEnumerator FadeOut()
+    public void Wrapper()
+    {
+        StartCoroutine(FadeOut());
+    }
+    private IEnumerator FadeOut()
     {
         fadeOutImage.CrossFadeAlpha(1.0f, 3.0f, false);
 
