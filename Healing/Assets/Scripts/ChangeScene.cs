@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField] private FadeOutScene fadeOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class ChangeScene : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene("FinalScene");
+            fadeOut.StartCoroutine(fadeOut.FadeOut());
         }
     }
 }
