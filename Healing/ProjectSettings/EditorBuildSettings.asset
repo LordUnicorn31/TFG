@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: cb4411dbfb138e14aa018534de859a02
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: ad03dbbb460d5644a93960142ca96691
+  - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 1fe00e64df271334c8771502bf4756ea
   - enabled: 1
-    path: Assets/Scenes/FinalScene.unity
-    guid: 3a70a69fa9095a345b085ab5ed7ff70a
-  - enabled: 1
     path: Assets/Scenes/Caves.unity
     guid: 4b6b6183b80141049931c558d1329aa7
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 3a70a69fa9095a345b085ab5ed7ff70a
   m_configObjects: {}
