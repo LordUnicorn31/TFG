@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private GameObject player;
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] private Vector3 offset;
 
-    
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void LateUpdate()
     {
-        if (target.position.x + offset.x > -2.0f)
+        if (player.transform.position.x + offset.x > -2.0f)
         {
-            Vector3 desiredPos = target.position + offset;
+            Vector3 desiredPos = player.transform.position + offset;
             Vector3 smoothedPos = Vector3.Lerp(transform.position, desiredPos, smoothSpeed);
             smoothedPos.z = transform.position.z;
             transform.position = smoothedPos;
