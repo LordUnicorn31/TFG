@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private GameObject light;
 
     public Vector3 position;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
         fall = GetComponent<Fall>();
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     // Update is called once per frame
     void Update()
     {
