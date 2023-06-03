@@ -1,28 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadButton : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public Transform spawnPoint;
-    
+    public string menuScene = "Menu";
+
     public void LoadGame()
     {
-        SaveData data = SaveManager.LoadGame();
+        SaveData data = SaveManager.Instance.LoadGame();
 
-        if(data.Equals(default(SaveData)))
+        if(data != null)
+        {
+            SceneManager.LoadScene(data.scene);
+        }
+        else
         {
             Debug.Log("No save file found");
         }
+    }
 
-        else
-        {
-            GameObject playerObject = Instantiate(playerPrefab);
-            PlayerMovement player = playerObject.GetComponent<PlayerMovement>();
-            player.LoadData(data);
-            Debug.Log("Game Loaded");
-        }
-              
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(menuScene);
     }
 }

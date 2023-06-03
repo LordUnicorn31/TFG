@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveButton : MonoBehaviour
 {
+    public GameObject playerObject;
     private PlayerMovement player;
-    private GameObject playerObject;
-
-    private void Awake()
-    {
-        playerObject = GameObject.FindGameObjectWithTag("player");
-        player = playerObject.GetComponent<PlayerMovement>();
-    }
     public void SaveGame()
     {
-        SaveData data = player.Save();
-        SaveManager.SaveGame(data);
+        Vector3 playerPos = playerObject.transform.position;
+        player = playerObject.GetComponent<PlayerMovement>();
+        float jumpForce = player.jumpForce;
+        Vector3 lightRadius = playerObject.transform.GetChild(0).gameObject.transform.localScale;
+        string scene = SceneManager.GetActiveScene().name;
+
+        SaveData data = new SaveData(playerPos, lightRadius, jumpForce, scene);
         Debug.Log("Game saved");
     }
 }

@@ -1,48 +1,70 @@
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
-    private static string saveFilePath = "save.dat";
-    
-    public static void SaveGame(SaveData data)
-    {
-        BinaryFormatter binFormat = new BinaryFormatter();
-        FileStream fileStr = File.Create(Application.persistentDataPath + "/" + saveFilePath);
+    public static SaveManager Instance;
 
-        binFormat.Serialize(fileStr, data);
-        fileStr.Close();
+    // I store the data as strings because keys do not accept complex variables like vectors
+    private string playerPositionKey = "PlayerPosition";
+    private string jumpForceKey = "JumpForce";
+    private string lightRadiusKey = "LightRadius";
+    private string sceneKey = "Scene";
+
+    //Singleton
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
-    public static SaveData LoadGame()
+    public void SaveGame(Vector3 playerPosition, float jumpForce, Vector3 lightRadius, string scene)
     {
-        if (File.Exists(Application.persistentDataPath + "/" + saveFilePath))
+        // I use PlayerPrefs class because it allows me to save data from game session to game session 
+        PlayerPrefs.SetString(playerPositionKey, playerPosition.ToString());
+        PlayerPrefs.SetFloat(jumpForceKey, jumpForce);
+        PlayerPrefs.SetString(lightRadiusKey, lightRadius.ToString());
+        PlayerPrefs.SetString(sceneKey, scene);
+        PlayerPrefs.Save();
+        Debug.Log("Game saved");
+    }
+
+    public SaveData LoadGame()
+    {
+        if(PlayerPrefs.HasKey(playerPositionKey) && PlayerPrefs.HasKey(jumpForceKey) && PlayerPrefs.HasKey(lightRadiusKey) && PlayerPrefs.HasKey(sceneKey))
         {
-            BinaryFormatter binFormat = new BinaryFormatter();
-            FileStream fileStr = File.Open(Application.persistentDataPath + "/" + saveFilePath, FileMode.Open);
-
-            SaveData data = (SaveData)binFormat.Deserialize(fileStr);
-            fileStr.Close();
-
+            Vector3 playerPos = StringToVector3(PlayerPrefs.GetString(playerPositionKey));
+            string currScene = PlayerPrefs.GetString(sceneKey);
+            float jumpForce = PlayerPrefs.GetFloat(jumpForceKey);
+            Vector3 lightRadius = StringToVector3(PlayerPrefs.GetString(lightRadiusKey));
+            SaveData data = new SaveData(playerPos, lightRadius, jumpForce, currScene);
+            Debug.Log("Game loaded");
             return data;
+            
         }
         else
         {
-            Debug.Log("Save file not found");
-            return new SaveData();
+            Debug.Log("No save file found");
+            return null;
         }
     }
 
-    public static void DeleteSave()
+    private Vector3 StringToVector3(string vectString)
     {
-        if(File.Exists(Application.persistentDataPath + "/" + saveFilePath))
-        {
-            File.Delete(Application.persistentDataPath + "/" + saveFilePath);
-        }
-        else
-        {
-            Debug.Log("Save file not found");
-        }
+        // Function to convert from string to vector·
+        vectString = vectString.Replace("(", "").Replace(")", "");
+        string[] values = vectString.Split(',');
+        float x = float.Parse(values[0]);
+        float y = float.Parse(values[1]);
+        float z = float.Parse(values[2]);
+        return new Vector3(x, y, z);
+
     }
 }
