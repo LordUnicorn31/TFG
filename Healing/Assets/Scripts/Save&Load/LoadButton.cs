@@ -31,7 +31,7 @@ public class LoadButton : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        GameObject playerObj = Instantiate(playerPrefab, sData.playerPosition / 10.0f, Quaternion.identity);
+        GameObject playerObj = Instantiate(playerPrefab, sData.playerPosition, Quaternion.identity);
         Debug.Log("player instantiated");
         PlayerMovement player = playerObj.GetComponent<PlayerMovement>();
 

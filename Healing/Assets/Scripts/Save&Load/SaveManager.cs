@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Globalization;
 
 public class SaveManager : MonoBehaviour
 {
@@ -61,9 +62,9 @@ public class SaveManager : MonoBehaviour
         // Function to convert from string to vector·
         vectString = vectString.Replace("(", "").Replace(")", "");
         string[] values = vectString.Split(',');
-        float x = float.Parse(values[0]);
-        float y = float.Parse(values[1]);
-        float z = float.Parse(values[2]);
+        float x = float.Parse(values[0], CultureInfo.InvariantCulture);
+        float y = float.Parse(values[1], CultureInfo.InvariantCulture);
+        float z = float.Parse(values[2], CultureInfo.InvariantCulture);
         return new Vector3(x, y, z);
 
     }
