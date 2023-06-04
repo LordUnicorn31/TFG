@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         loaded = true;
         this.gameObject.transform.position = data.playerPosition / 10.0f;
         jumpForce = data.jumpForce;
-        light.transform.localScale = data.lightRadius;
+        light.transform.localScale = data.lightRadius / 10.0f;
     }
 
 }
