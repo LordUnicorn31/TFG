@@ -1043,6 +1043,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18.839619, y: 7.6030354}
   m_EdgeRadius: 0
+--- !u!1 &195382144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195382146}
+  - component: {fileID: 195382145}
+  m_Layer: 0
+  m_Name: LoadGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &195382145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195382144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acd2ad6f907e07409d3c00733771ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuScene: Menu
+  playerPrefab: {fileID: 6745089124068650309, guid: 336f59b6b455aa44ca1c05fceee42fa0, type: 3}
+--- !u!4 &195382146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195382144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 534, y: 239.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &264859855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42918,7 +42963,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969676972}
-  - component: {fileID: 969676971}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -42926,19 +42970,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &969676971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969676970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4085f7211dfe6448eca0e122f1e665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPos: {x: 4, y: -1.15, z: 0}
 --- !u!4 &969676972
 Transform:
   m_ObjectHideFlags: 0
@@ -96092,13 +96123,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1148456950}
+        m_TargetAssemblyTypeName: SaveButton, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

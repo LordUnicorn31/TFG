@@ -14,6 +14,7 @@ public class LoadButton : MonoBehaviour
         if(data != null)
         {
             SceneManager.LoadScene(data.scene);
+            StartCoroutine(InstantiatePlayer(data));
         }
         else
         {
@@ -30,7 +31,8 @@ public class LoadButton : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        GameObject playerObj = Instantiate(playerPrefab, sData.playerPosition, Quaternion.identity);
+        GameObject playerObj = Instantiate(playerPrefab, sData.playerPosition / 10.0f, Quaternion.identity);
+        Debug.Log("player instantiated");
         PlayerMovement player = playerObj.GetComponent<PlayerMovement>();
 
         if(player != null)

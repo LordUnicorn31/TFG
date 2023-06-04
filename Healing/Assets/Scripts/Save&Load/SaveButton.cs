@@ -19,6 +19,6 @@ public class SaveButton : MonoBehaviour
         string scene = SceneManager.GetActiveScene().name;
 
         SaveData data = new SaveData(playerPos, lightRadius, jumpForce, scene);
-        Debug.Log("Game saved");
+        SaveManager.Instance.SaveGame(data);
     }
 }

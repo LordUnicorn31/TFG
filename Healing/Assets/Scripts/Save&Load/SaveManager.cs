@@ -25,13 +25,13 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SaveGame(Vector3 playerPosition, float jumpForce, Vector3 lightRadius, string scene)
+    public void SaveGame(SaveData data)
     {
         // I use PlayerPrefs class because it allows me to save data from game session to game session 
-        PlayerPrefs.SetString(playerPositionKey, playerPosition.ToString());
-        PlayerPrefs.SetFloat(jumpForceKey, jumpForce);
-        PlayerPrefs.SetString(lightRadiusKey, lightRadius.ToString());
-        PlayerPrefs.SetString(sceneKey, scene);
+        PlayerPrefs.SetString(playerPositionKey, data.playerPosition.ToString());
+        PlayerPrefs.SetFloat(jumpForceKey, data.jumpForce);
+        PlayerPrefs.SetString(lightRadiusKey, data.lightRadius.ToString());
+        PlayerPrefs.SetString(sceneKey, data.scene);
         PlayerPrefs.Save();
         Debug.Log("Game saved");
     }

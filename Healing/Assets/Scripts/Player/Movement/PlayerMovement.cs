@@ -15,7 +15,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 position;
 
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +27,7 @@ public class PlayerMovement : MonoBehaviour
         fall = GetComponent<Fall>();
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -74,7 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void LoadData(SaveData data)
     {
-        transform.position = data.playerPosition;
+        Debug.Log("Loading data");
+
+        this.gameObject.transform.position = data.playerPosition / 10.0f;
         jumpForce = data.jumpForce;
         light.transform.localScale = data.lightRadius;
     }
