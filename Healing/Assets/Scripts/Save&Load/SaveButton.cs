@@ -3,8 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SaveButton : MonoBehaviour
 {
-    public GameObject playerObject;
+    private GameObject playerObject;
     private PlayerMovement player;
+
+    private void Awake()
+    {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+    }
     public void SaveGame()
     {
         Vector3 playerPos = playerObject.transform.position;

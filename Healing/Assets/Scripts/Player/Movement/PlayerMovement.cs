@@ -62,19 +62,18 @@ public class PlayerMovement : MonoBehaviour
 
     public SaveData Save()
     {
-        SaveData data;
+        SaveData data = null;
 
         data.playerPosition = transform.position;
         data.jumpForce = 10.0f;
         data.lightRadius = light.transform.localScale;
-        data.scene = SceneManager.GetActiveScene();
+        data.scene = SceneManager.GetActiveScene().name;
 
         return data;
     }
 
     public void LoadData(SaveData data)
     {
-        SceneManager.LoadScene(data.scene.name);
         transform.position = data.playerPosition;
         jumpForce = data.jumpForce;
         light.transform.localScale = data.lightRadius;
