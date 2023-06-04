@@ -5,14 +5,22 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     // This script aims to manage all the objects in DontSetroyOnLoad in each scene
-    private GameObject player;
+    private GameObject playerObj;
+    private PlayerMovement player;
     [SerializeField] Vector3 playerPos;
     // Start is called before the first frame update
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = playerPos;
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        player = playerObj.GetComponent<PlayerMovement>();
+
+        if (!player.loaded)
+        {
+            player.transform.position = playerPos;
+        }
+
+        else return;
     }
     void Start()
     {

@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private HorizontalMovement horMovement;
     private Jump jump;
     private Fall fall;
+    public bool loaded = false;
     public float jumpForce;
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
@@ -75,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     public void LoadData(SaveData data)
     {
         Debug.Log("Loading data");
-
+        loaded = true;
         this.gameObject.transform.position = data.playerPosition / 10.0f;
         jumpForce = data.jumpForce;
         light.transform.localScale = data.lightRadius;
