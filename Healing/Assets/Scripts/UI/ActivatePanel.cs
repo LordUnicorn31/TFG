@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActivatePanel : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
+    public bool isMenuActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class ActivatePanel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            isMenuActive = !isMenuActive;
             panel.SetActive(!panel.activeSelf);
         }
     }
