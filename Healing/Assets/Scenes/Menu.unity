@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 913235440}
   - component: {fileID: 913235439}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,7 +530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 32689954}
         m_TargetAssemblyTypeName: FadeOutScene, Assembly-CSharp
-        m_MethodName: Wrapper
+        m_MethodName: WrapperInstantiate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 1326589744}
   - component: {fileID: 1326589743}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 1800995416}
   - component: {fileID: 1800995415}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1474,7 +1474,7 @@ GameObject:
   - component: {fileID: 1857408102}
   - component: {fileID: 1857408101}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,6 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeOutImage: {fileID: 1318452534}
   sceneName: Settings
+  playerPrefab: {fileID: 0}
 --- !u!4 &1954320514
 Transform:
   m_ObjectHideFlags: 0
@@ -1841,6 +1842,10 @@ PrefabInstance:
       propertyPath: fadeOutImage
       value: 
       objectReference: {fileID: 1318452534}
+    - target: {fileID: 7460371508079427957, guid: db8759b4495ed7645966d20cd871b5fc, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 6745089124068650309, guid: 336f59b6b455aa44ca1c05fceee42fa0, type: 3}
     - target: {fileID: 7460371508079427958, guid: db8759b4495ed7645966d20cd871b5fc, type: 3}
       propertyPath: m_Name
       value: ChangeScene
