@@ -23,11 +23,13 @@ public class FadeOutScene : MonoBehaviour
     public void Wrapper()
     {
         StartCoroutine(FadeOut());
+        StopCoroutine(FadeOut());
     }
 
     public void WrapperInstantiate()
     {
         StartCoroutine(FadeOutInstantiate());
+        StopCoroutine(FadeOutInstantiate());
     }
 
     private IEnumerator FadeOut()
