@@ -9,7 +9,7 @@ public class ActivatePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,6 +25,12 @@ public class ActivatePanel : MonoBehaviour
             isMenuActive = !isMenuActive;
             panel.SetActive(!panel.activeSelf);
         }
+    }
+
+    public void DeActivateMenuOnClick()
+    {
+        isMenuActive = false;
+        panel.SetActive(false);
     }
 
 }

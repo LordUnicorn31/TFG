@@ -13,17 +13,8 @@ public class QuitGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quit();
+        
     }
-
-    private void Quit()
-    {
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
-
     public void QuitButton()
     {
         Application.Quit();
