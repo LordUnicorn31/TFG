@@ -9,16 +9,19 @@ public class PlayerMovement : MonoBehaviour
     private Jump jump;
     private Fall fall;
     public bool loaded = false;
+    private bool options = false;
     public float jumpForce;
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
+    private GameObject optionsMenu;
 
     public Vector3 position;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        optionsMenu = GameObject.FindGameObjectWithTag("Options");
     }
     // Start is called before the first frame update
     void Start()
