@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool loaded = false;
     private bool options = false;
     public float jumpForce;
+    public bool notLoaded = false;
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
