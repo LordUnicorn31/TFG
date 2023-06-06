@@ -10,21 +10,19 @@ public class PlayerMovement : MonoBehaviour
     private Jump jump;
     private Fall fall;
     public bool loaded = false;
-    private bool options = false;
+    public bool options = false;
     public float jumpForce;
     public bool notLoaded = false;
     private bool isTalking = false;
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
-    private GameObject optionsMenu;
 
     public Vector3 position;
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        optionsMenu = GameObject.FindGameObjectWithTag("Options");
     }
     // Start is called before the first frame update
     void Start()
@@ -38,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTalking) return;
+        if (isTalking || options) return;
         else
         {
             horMovement.Movement();
@@ -49,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isTalking) return;
+        if (isTalking || options) return;
         else
         {
             fall.Falling();
