@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Fall fall;
     public bool loaded = false;
     public bool options = false;
-    public float jumpForce;
+    public float jumpForce = 6.0f;
     public bool notLoaded = false;
     private bool isTalking = false;
     [SerializeField] private float lightRadius = 0.5f;

@@ -31,7 +31,7 @@ public class CheckPoint : MonoBehaviour
             if(enlight)
             {
                 player.Enlight();
-                playerJump.force += 1;
+                player.jumpForce += 1;
                 enlight = false;
             }
             
