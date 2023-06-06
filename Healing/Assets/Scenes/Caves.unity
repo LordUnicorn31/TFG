@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e37c7f7e503b52409dded18cff9c4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {x: -3, y: -1.15, z: 0}
+  spawn: {x: 0.37, y: -1.15, z: 0}
 --- !u!4 &639658482
 Transform:
   m_ObjectHideFlags: 0

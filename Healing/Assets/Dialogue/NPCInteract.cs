@@ -65,4 +65,10 @@ public class NPCInteract : MonoBehaviour
             textRender.GetComponent<MeshRenderer>().enabled = false;
         }
     }
+
+    [YarnCommand("destroyNPC")]
+    public void DestroyNPC()
+    {
+        Destroy(this.gameObject);
+    }
 }
