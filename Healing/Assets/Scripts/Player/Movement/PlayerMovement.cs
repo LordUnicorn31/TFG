@@ -36,7 +36,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horMovement.Movement();
+        jump.Jumping();
+    }
 
+    private void FixedUpdate()
+    {
+        fall.Falling();
     }
 
     public void SetCheckPoint(Vector3 newPos)

@@ -16,13 +16,7 @@ public class Jump : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Jumping();
-    }
-
-    private void Jumping()
+    public void Jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {

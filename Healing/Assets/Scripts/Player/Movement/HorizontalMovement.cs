@@ -18,13 +18,6 @@ public class HorizontalMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (npc.isTalking) return;
-
-        Movement();
-    }
-
     public void Movement()
     {
         float movement = GetMovementInput();
