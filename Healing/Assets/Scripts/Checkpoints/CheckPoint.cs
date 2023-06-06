@@ -6,35 +6,32 @@ using UnityEngine.Tilemaps;
 public class CheckPoint : MonoBehaviour
 {
     [SerializeField] Vector3 checkPointPos;
-    [SerializeField]private PlayerMovement player;
+    private GameObject playerObj;
+    private PlayerMovement player;
+    private Jump playerJump;
     private bool enlight = true;
-    [SerializeField] GameObject background;
-    private Tilemap tilemap;
-    [SerializeField] Color backGroundColor;
 
+    private void Awake()
+    {
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        player = playerObj.GetComponent<PlayerMovement>();
+        playerJump = playerObj.GetComponent<Jump>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         checkPointPos = transform.position;
-        tilemap = background.GetComponent<Tilemap>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            player.SetCheckPoint(checkPointPos);
+            player.SetCheckPoint(checkPointPos);       
             if(enlight)
             {
                 player.Enlight();
-                tilemap.color = backGroundColor;
+                playerJump.force += 1;
                 enlight = false;
             }
             

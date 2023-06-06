@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [SerializeField] private float force = 10.0f;
+    public float force = 8.0f;
     private Rigidbody2D rb;
     private Animator anim;
     public bool isJumping = false;
