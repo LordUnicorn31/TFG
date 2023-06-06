@@ -1,13 +1,15 @@
 ﻿title: Start
 ---
 <<declare $name to "">>
+<<isTalking Player(Clone)>>
 ???: Oh...hi
 ???: You are finally here
 ???: I know you have a lot of questions
 ???: Please meet me ahead and I will answer them as much as I can
-???: Can you please remind me your name?
 <<set_name SetName>>
+???: Can you please remind me your name?
 <<destroyNPC NPC>>
+<<isNotTalking Player(Clone)>>
 
 
 ===

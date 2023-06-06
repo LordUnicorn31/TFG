@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool options = false;
     public float jumpForce;
     public bool notLoaded = false;
+    private bool isTalking = false;
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
@@ -36,13 +38,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horMovement.Movement();
-        jump.Jumping();
+        if (isTalking) return;
+        else
+        {
+            horMovement.Movement();
+            jump.Jumping();
+        }
+        
     }
 
     private void FixedUpdate()
     {
-        fall.Falling();
+        if (isTalking) return;
+        else
+        {
+            fall.Falling();
+        }
+        
     }
 
     public void SetCheckPoint(Vector3 newPos)
@@ -92,4 +104,15 @@ public class PlayerMovement : MonoBehaviour
         light.transform.localScale = data.lightRadius;
     }
 
+    [YarnCommand("isTalking")]
+    public void IsTalking()
+    {
+        isTalking = true;
+    }
+
+    [YarnCommand("isNotTalking")]
+    public void IsNotTalking()
+    {
+        isTalking = false;
+    }
 }

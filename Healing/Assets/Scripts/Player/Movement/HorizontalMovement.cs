@@ -8,7 +8,6 @@ public class HorizontalMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator anim;
-    [SerializeField]NPCInteract npc;
     //variables
     public bool isFacingRight = true;
 
