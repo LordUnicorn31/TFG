@@ -16,6 +16,8 @@ public class CavesScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.position = spawn;
+
         if (player.notLoaded)
         {
             player.transform.position = spawn;
