@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
         this.gameObject.transform.position = data.playerPosition;
         jumpForce = data.jumpForce;
         light.transform.localScale = data.lightRadius;
+        position = data.lastCheckpoint;
     }
 
     [YarnCommand("isTalking")]

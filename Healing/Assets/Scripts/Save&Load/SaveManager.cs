@@ -9,6 +9,7 @@ public class SaveManager : MonoBehaviour
     // I store the data as strings because keys do not accept complex variables like vectors
     private string playerPositionKey = "PlayerPosition";
     private string jumpForceKey = "JumpForce";
+    private string checkpointKey = "Checkpoint";
     private string lightRadiusKey = "LightRadius";
     private string sceneKey = "Scene";
 
@@ -32,6 +33,7 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetString(playerPositionKey, data.playerPosition.ToString());
         PlayerPrefs.SetFloat(jumpForceKey, data.jumpForce);
         PlayerPrefs.SetString(lightRadiusKey, data.lightRadius.ToString());
+        PlayerPrefs.SetString(checkpointKey, data.lastCheckpoint.ToString());
         PlayerPrefs.SetString(sceneKey, data.scene);
         PlayerPrefs.Save();
         Debug.Log("Game saved");
@@ -45,7 +47,8 @@ public class SaveManager : MonoBehaviour
             string currScene = PlayerPrefs.GetString(sceneKey);
             float jumpForce = PlayerPrefs.GetFloat(jumpForceKey);
             Vector3 lightRadius = StringToVector3(PlayerPrefs.GetString(lightRadiusKey));
-            SaveData data = new SaveData(playerPos, lightRadius, jumpForce, currScene);
+            Vector3 checkpoint = StringToVector3(PlayerPrefs.GetString(checkpointKey));
+            SaveData data = new SaveData(playerPos, lightRadius, checkpoint, jumpForce, currScene);
             Debug.Log("Game loaded");
             return data;
             

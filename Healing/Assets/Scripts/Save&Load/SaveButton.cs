@@ -16,9 +16,10 @@ public class SaveButton : MonoBehaviour
         player = playerObject.GetComponent<PlayerMovement>();
         float jumpForce = player.jumpForce;
         Vector3 lightRadius = playerObject.transform.GetChild(0).gameObject.transform.localScale;
+        Vector3 checkpoint = player.position;
         string scene = SceneManager.GetActiveScene().name;
 
-        SaveData data = new SaveData(playerPos, lightRadius, jumpForce, scene);
+        SaveData data = new SaveData(playerPos, lightRadius, checkpoint, jumpForce, scene);
         SaveManager.Instance.SaveGame(data);
     }
 }
