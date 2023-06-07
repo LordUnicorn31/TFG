@@ -16,51 +16,54 @@
 
 title: Second
 ---
+<<isTalking Player(Clone)>>
 ???: Hey, <color=red>{$name}</color>, I am happy to see you got here
 <color=red>{$name}</color>: Hi...
-
--> Where am I?
-    <<set $choice1 to true>>
-    <<set $choice2 to false>>
--> Who are you?
-    <<set $choice2 to true>>
-    <<set $choice1 to false>>
-
-<<if $choice1>>
-    ???: Somewhere you have always been but you never knew
-    ???: What you see here is your <color=red>mind</color>
-    ???: You may not have realized at first because of how distinct it looks like from before
-    ???: This place used to be quite different...more...<color=yellow>colorful</color>
-    $name: A
-
-    -> Who are you?
-    <<set $choice1 to false>>
-    <<set $choice2 to true>>
-<<else>>
-    ???: I am <color=red>Akil</color>
-    Akil: And I am here to guide you through this journey
-
-    -> Where am I?
-    <<set $choice1 to true>>
-    <<set $choice2 to false>>
-<<endif>>
-
-<<if $choice2>>
-    ???: I am <color=red>Akil</color>
-    Akil: And I am here to guide you through this journey
-<<else>>
-    ???: Somewhere you have always been but you never knew
-    ???: What you see here is your <color=red>mind</color>
-    ???: You may not have realized at first because of how distinct it looks like from before
-    ???: This place used to be quite different...more...<color=yellow>colorful</color>
-    $name: A
-<<endif>>
+<color=red>{$name}</color>: Who are you?
+???: Of course! I haven't presented myself, sorry about that
+???: I am <color=green>Akil</color>
+Akil: And I am here to guide you through this journey
+<color=red>{$name}</color>: Nice to meet you <color=green>Akil</color>
+<color=red>{$name}</color>: Where am I?
+Akil: Somewhere you have always been but you never knew
+Akil: What you see here is your <color=red>mind</color>
+Akil: You may not have realized at first because of how distinct it looks like from before
+Akil: This place used to be quite different...more...<color=yellow>illuminated</color>
+Akil: The <color=yellow>light</color> has been lost...and it is your job to restore it
+<color=red>{$name}</color>: Is there anything I can do to bring the <color=yellow>light</color> back?
+Akil: To bring the <color=yellow>light</color> back all you have to do is complete <color=blue>challenges</color>
+<color=red>{$name}</color>: <color=blue>challenges</color> ?
+Akil: Challenges are obstacles found in here
+Akil: Said obstacles bring <color=purple>darkness</color> to this place and thus prevent it from receiving <color=yellow>light</color>
+Akil: Can you see the <color=yellow>light</color> aura around you?
+Akil: That light aura around you is your <color=yellow>hope</color>
+Akil: Your <color=yellow>hope</color> increases upon completing challenges
+Akil: And when your hope increases the <color=yellow>light</color> starts coming again and the <color=purple>darkness</color> goes away
+<color=red>{$name}</color>: So...if I defeat obstacles I get more hope, and by having more hope I defeat the <color=purple>darkness</color> and bring back the <color=yellow>light</color>
+Akil: Exactly! So you understood it...
+Akil: Right in front of you are the 2 first obstacles
+Akil: The first one is a jumping obstacles where you just have to jump accross to the next portion of ground using the platforms displayed
+Akil: The second one is a puzzle
+Akil: Move the pieces using your mouse and complete the image given
+Akil: I will see you ahead, good luck!
+<<destroyNPC NPC1>>
+<<isNotTalking Player(Clone)>>
 
 ===
 
 title: Third
 ---
-Akil: Try to move these two platforms by using <color=red>left-click</color> and <color=red>dragging
+<<isTalking Player(Clone)>>
+Akil: Did you see that?
+Akil: Upon going through this <color=yellow>light spot</color> your hope has incremented
+Akil: These light spots are found after <color=purple>obstacles</color>
+Akil: In this case the obstacles were the platforms and the puzzle
+Akil: Apart from incrementing your hope this light spots save your position, meaning that if you fail you will respawn in the last light spot you went through
+Akil: ...Oh, this next obstacle seems to be more difficult than the previous ones
+Akil: I do not think you can get through this just by jumping... I think you will have to do something more
+Akil: Try to move the platforms by using <color=red>left-click mouse</color> and <color=red>dragging
+<<destroyNPC NPC2>>
+<<isNotTalking Player(Clone)>>
 ===
 
 

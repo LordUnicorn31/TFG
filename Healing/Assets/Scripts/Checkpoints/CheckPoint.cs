@@ -8,14 +8,13 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] Vector3 checkPointPos;
     private GameObject playerObj;
     private PlayerMovement player;
-    private Jump playerJump;
+    [SerializeField] private float jumpForce = 0.5f;
     private bool enlight = true;
 
     private void Awake()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<PlayerMovement>();
-        playerJump = playerObj.GetComponent<Jump>();
     }
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,7 @@ public class CheckPoint : MonoBehaviour
             if(enlight)
             {
                 player.Enlight();
-                player.jumpForce += 1;
+                player.jumpForce += jumpForce;
                 enlight = false;
             }
             
