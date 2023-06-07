@@ -29,12 +29,16 @@ title: Second
 <<if $choice1>>
     ???: Somewhere you have always been but you never knew
     ???: What you see here is your <color=red>mind</color>
+    ???: You may not have realized at first because of how distinct it looks like from before
+    ???: This place used to be quite different...more...<color=yellow>colorful</color>
+    $name: A
 
     -> Who are you?
     <<set $choice1 to false>>
     <<set $choice2 to true>>
 <<else>>
-    ???: No one
+    ???: I am <color=red>Akil</color>
+    Akil: And I am here to guide you through this journey
 
     -> Where am I?
     <<set $choice1 to true>>
@@ -42,15 +46,21 @@ title: Second
 <<endif>>
 
 <<if $choice2>>
-    ???: No one
+    ???: I am <color=red>Akil</color>
+    Akil: And I am here to guide you through this journey
 <<else>>
     ???: Somewhere you have always been but you never knew
     ???: What you see here is your <color=red>mind</color>
+    ???: You may not have realized at first because of how distinct it looks like from before
+    ???: This place used to be quite different...more...<color=yellow>colorful</color>
+    $name: A
 <<endif>>
 
 ===
 
 title: Third
 ---
-???: Try to move these two platforms by using <color=red>left-click</color> and <color=red>dragging
+Akil: Try to move these two platforms by using <color=red>left-click</color> and <color=red>dragging
 ===
+
+
