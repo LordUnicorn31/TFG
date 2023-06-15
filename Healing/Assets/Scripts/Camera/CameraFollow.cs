@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
     private GameObject player;
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] private Vector3 offset;
+    [SerializeField] private float minX = -2.0f;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if (player.transform.position.x + offset.x > -2.0f)
+        if (player.transform.position.x + offset.x > minX)
         {
             Vector3 desiredPos = player.transform.position + offset;
             Vector3 smoothedPos = Vector3.Lerp(transform.position, desiredPos, smoothSpeed);
