@@ -67,3 +67,45 @@ Akil: Try to move the platforms by using <color=red>left-click mouse</color> and
 ===
 
 
+title: Fourth
+---
+
+<<isTalking Player(Clone)>>
+Akil: Look! Your previous actions have removed a bit of the darkness of your mind
+Akil: Do not give up!
+<<destroyNPC NPC>>
+<<isNotTalking Player(Clone)>>
+===
+
+
+title: Fifth
+---
+<<isTalking Player(Clone)>>
+Akil: Remember, do noy give up just because you think you are not able to make it
+Akil: Sometimes watching things from a different perspective allows you to achieve your goals
+<<destroyNPC NPC1>>
+<<isNotTalking Player(Clone)>>
+===
+
+
+title: Sixth
+---
+<<isTalking Player(Clone)>>
+Akil: Do not be scared to create your own path
+Akil: Most of the obstacles you will find are not objective but subjective
+Akil: It is up to you how you face it and get over it
+Akil: All perspectives are valid
+<<destroyNPC NPC2>>
+<<isNotTalking Player(Clone)>>
+===
+
+
+title: Seventh
+---
+<<isTalking Player(Clone)>>
+Akil: The negative thoughts are often ideas that have been subjectly arranged in a bad way
+Akil: The very same ideas arrenged in the right way may complete a positive thought
+Akil: How about you convert this ugly mess into a beautiful flower?
+<<destroyNPC NPC3>>
+<<isNotTalking Player(Clone)>>
+===
