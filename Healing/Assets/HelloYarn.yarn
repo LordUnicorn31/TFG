@@ -109,3 +109,15 @@ Akil: How about you convert this ugly mess into a beautiful flower?
 <<destroyNPC NPC3>>
 <<isNotTalking Player(Clone)>>
 ===
+
+
+title: Eight
+---
+<<isTalking Player(Clone)>>
+Akil:...
+Akil: It looks like the drakness is back
+Akil: In every healing process there are ups and downs
+Akil: The most important thing is that now you have learnt how to deal with the darkness
+<<destroyNPC NPC>>
+<<isNotTalking Player(Clone)>>
+===
