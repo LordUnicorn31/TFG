@@ -4,9 +4,10 @@ using System.Collections;
 
 public class FadingText : MonoBehaviour
 {
-    public float fadeInDuration = 1f;
-    public float fadeOutDuration = 1f;
-    public float displayDuration = 8f;
+    [SerializeField] private float fadeInDuration = 1f;
+    [SerializeField] private float fadeOutDuration = 1f;
+    [SerializeField] private float displayDuration = 8f;
+    [SerializeField] private float endGameDuration = 1f;
 
     private Text textComponent;
 
@@ -42,6 +43,10 @@ public class FadingText : MonoBehaviour
         }
 
         Destroy(gameObject);
+
+        yield return new WaitForSeconds(endGameDuration);
+
+        Application.Quit();
     }
 }
 

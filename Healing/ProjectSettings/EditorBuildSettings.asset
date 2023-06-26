@@ -21,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Caves.unity
     guid: 4b6b6183b80141049931c558d1329aa7
   - enabled: 1
-    path: Assets/Scenes/FinalScene.unity
-    guid: 3a70a69fa9095a345b085ab5ed7ff70a
-  - enabled: 1
     path: Assets/Scenes/Lvl3.unity
     guid: 93109a8e389ea4c498e1c04c57341fed
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 3a70a69fa9095a345b085ab5ed7ff70a
   m_configObjects: {}

@@ -8,13 +8,12 @@ public class BlurredPlatform : MonoBehaviour
     private bool inRange = false;
     private BoxCollider2D collider;
     private Material material;
-    private MovingPlatform movingPlat;
+
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<BoxCollider2D>();
         material = GetComponent<SpriteRenderer>().material;
-        movingPlat = GetComponent<MovingPlatform>();
     }
 
     // Update is called once per frame
@@ -26,7 +25,6 @@ public class BlurredPlatform : MonoBehaviour
             inRange = true;
             material.shader = Shader.Find("Sprites/Default");
             collider.enabled = true;
-            movingPlat.enabled = true;
         }
     }
 
@@ -46,7 +44,6 @@ public class BlurredPlatform : MonoBehaviour
             inRange = false;
             material.shader = Shader.Find("Custom/Blurr");
             collider.enabled = false;
-            movingPlat.enabled = false;
         }
     }
 }
