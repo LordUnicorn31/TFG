@@ -42,7 +42,6 @@ public class FadingText : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject);
 
         yield return new WaitForSeconds(endGameDuration);
 

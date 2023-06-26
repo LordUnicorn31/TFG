@@ -29,6 +29,7 @@ public class Puzzle : MonoBehaviour
         if(numCorrectPieces == puzzlePieces.Length)
         {
             AudioSource.PlayClipAtPoint(correctPieceSound, Camera.main.transform.position);
+            GetComponent<BoxCollider2D>().enabled = false;
             Debug.Log("Puzzle Completed");
         }
         else

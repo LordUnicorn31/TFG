@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3162202410113287922}
   - component: {fileID: 3162202410113287921}
   - component: {fileID: 3162202410113287923}
+  - component: {fileID: 6474458112840269039}
   m_Layer: 0
   m_Name: puzzle4pieces
   m_TagString: Untagged
@@ -105,6 +106,32 @@ MonoBehaviour:
   - {fileID: 3162202410163815699}
   - {fileID: 3162202411022528556}
   correctPieceSound: {fileID: 8300000, guid: 4158277ffffccdd41b774870b67cff8a, type: 3}
+--- !u!61 &6474458112840269039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162202410113287920}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.582199, y: -7.152191}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.8, y: 10.8}
+    newSize: {x: 2, y: 1.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15893555, y: 3.3570704}
+  m_EdgeRadius: 0
 --- !u!1 &3162202410163815699
 GameObject:
   m_ObjectHideFlags: 0
