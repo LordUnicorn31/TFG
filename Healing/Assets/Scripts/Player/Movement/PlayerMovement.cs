@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lightRadius = 0.5f;
     [SerializeField] private FadeOut fadeOut;
     [SerializeField]private GameObject light;
+    private Animator anim;
+    private Rigidbody2D rb;
 
     public Vector3 position;
 
@@ -30,13 +32,21 @@ public class PlayerMovement : MonoBehaviour
         horMovement = GetComponent<HorizontalMovement>();
         jump = GetComponent<Jump>();
         fall = GetComponent<Fall>();
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (isTalking || options) return;
+        if (isTalking || options)
+        {
+            
+            anim.SetBool("isRunning", false);
+            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            return;
+        }
         else
         {
             horMovement.Movement();

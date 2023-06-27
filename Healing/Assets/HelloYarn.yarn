@@ -72,6 +72,9 @@ title: Fourth
 
 <<isTalking Player(Clone)>>
 Akil: Look! Your previous actions have removed a bit of the darkness of your mind
+Akil: Hmmm...take a look at these two platforms at your right, they seem to be blurred
+Akil: I guess your mind is playing tricks on you and making you believe these platforms are different from the rest
+Akil: I suggest you pretend nothing is different and keep going
 Akil: Do not give up!
 <<destroyNPC NPC>>
 <<isNotTalking Player(Clone)>>
