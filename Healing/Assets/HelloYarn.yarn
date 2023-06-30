@@ -41,8 +41,8 @@ Akil: Your <color=yellow>hope</color> increases upon completing challenges
 Akil: And when your hope increases the <color=yellow>light</color> starts coming again and the <color=purple>darkness</color> goes away
 <color=red>{$name}</color>: So...if I defeat obstacles I get more hope, and by having more hope I defeat the <color=purple>darkness</color> and bring back the <color=yellow>light</color>
 Akil: Exactly! So you understood it...
-Akil: Right in front of you are the 2 first obstacles
-Akil: The first one is a jumping obstacles where you just have to jump accross to the next portion of ground using the platforms displayed
+Akil: Right in front of you are the two first obstacles
+Akil: The first one is a jumping obstacle where you just have to jump accross to the next portion of ground using the platforms displayed
 Akil: The second one is a puzzle
 Akil: Move the pieces using your mouse and complete the image given
 Akil: I will see you ahead, good luck!
@@ -84,7 +84,7 @@ Akil: Do not give up!
 title: Fifth
 ---
 <<isTalking Player(Clone)>>
-Akil: Remember, do noy give up just because you think you are not able to make it
+Akil: Remember, do not give up just because you think you are not able to make it
 Akil: Sometimes watching things from a different perspective allows you to achieve your goals
 <<destroyNPC NPC1>>
 <<isNotTalking Player(Clone)>>
@@ -106,8 +106,8 @@ Akil: All perspectives are valid
 title: Seventh
 ---
 <<isTalking Player(Clone)>>
-Akil: The negative thoughts are often ideas that have been subjectly arranged in a bad way
-Akil: The very same ideas arrenged in the right way may complete a positive thought
+Akil: The negative thoughts are often ideas that have been subjectively arranged in a bad way
+Akil: The very same ideas arrenged in an objective way may complete a positive thought
 Akil: How about you convert this ugly mess into a beautiful flower?
 <<destroyNPC NPC3>>
 <<isNotTalking Player(Clone)>>
